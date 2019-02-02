@@ -11,7 +11,7 @@ public class ResponseMessage {
     //Notice
     public static final String READ_NOTICE = "공지사항 조회 성공";
   
-    //Todo
+    //Homework
     public static final String READ_HOMEWORK = "과제 정보 조회 성공";
 
     public static final String INTERNAL_SERVER_ERROR = "서버 내부 에러";
