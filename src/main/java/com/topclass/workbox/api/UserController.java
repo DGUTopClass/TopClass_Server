@@ -25,7 +25,6 @@ public class UserController {
 //
 //    @PostMapping("")
 //    public ResponseEntity signUp(@RequestBody final User user){
-//
 //    }
 
 }
