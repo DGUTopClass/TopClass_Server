@@ -12,14 +12,14 @@ public class UserController {
 
     public UserController(final UserService userService) {this.userService = userService; }
 
-    @GetMapping("")
-    public ResponseEntity getUser(@RequestParam("id") final Optional<String> id){
-        //
-    }
-
-    @PostMapping("")
-    public ResponseEntity signUp(@RequestBody final User user){
-        //
-    }
+//    @GetMapping("")
+//    public ResponseEntity getUser(@RequestParam("id") final Optional<String> id){
+//        //
+//    }
+//
+//    @PostMapping("")
+//    public ResponseEntity signUp(@RequestBody final User user){
+//        //
+//    }
 
 }
