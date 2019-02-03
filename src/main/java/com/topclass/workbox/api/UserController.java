@@ -46,7 +46,7 @@ public class UserController {
     @PutMapping("/{user_id}")
     public ResponseEntity updateTheme(@PathVariable(value = "user_id") final String user_id,
                                       @RequestBody final Integer theme){
-
+        return new ResponseEntity<>(userService.updateTheme(theme), HttpStatus.OK);
     }
 
 
