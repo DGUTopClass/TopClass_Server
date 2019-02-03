@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
+import java.util.UUID;
 
 // Controller : 클라와 Model을 주고 받음
 
@@ -32,7 +33,14 @@ public class UserController {
 //    }
 
     // 1. 유저 등록 (초기화면 – 학번확인 정도)  / POST
+    @PostMapping
+    public ResponseEntity createUser(@RequestParam(value = "student_id") final String student_id,
+                                     @RequestParam(value = "password") final String password){
+        String uuid = UUID.randomUUID().toString();
+        User user = new User(uuid, student_id, password);
 
+
+    }
     // 2. 테마 설정 / PUT
 
 }
