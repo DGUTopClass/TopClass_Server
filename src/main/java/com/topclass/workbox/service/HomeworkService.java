@@ -30,6 +30,6 @@ public class HomeworkService {
                                                         // 따라서, 지금은 howework로 해뒀는데 새로운 데이터 타입(hw을 상속 받은)이 필요
         // 4. DefaultRes를 하나 만들어서 이를 리턴
         // ex) DefaultRes.res(StatusCode.OK, ResponseMessage.READ_SUCCESS, calendarTabReqList);
-        return DefaultRes.res(StatusCode.OK, ResponseMessage.READ_HOMEWORK);
+        return DefaultRes.res(StatusCode.OK, ResponseMessage.READ_HOMEWORK, homeworkList);
     }
 }
