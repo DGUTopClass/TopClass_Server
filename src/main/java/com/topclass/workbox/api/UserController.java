@@ -43,5 +43,11 @@ public class UserController {
         return new ResponseEntity<>(userService.createUser(user), HttpStatus.OK);
     }
     // 2. 테마 설정 / PUT
+    @PutMapping("/{user_id}")
+    public ResponseEntity updateTheme(@PathVariable(value = "user_id") final String user_id,
+                                      @RequestBody final Integer theme){
+
+    }
+
 
 }
