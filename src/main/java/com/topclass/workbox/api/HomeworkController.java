@@ -21,6 +21,7 @@ public class HomeworkController {
 
     public HomeworkController(final HomeworkService homeworkService) {this.homeworkService = homeworkService; }
 
+    @GetMapping("")
     public ResponseEntity getSummitedHomeworkList(@RequestHeader(value = "Authorization") final Optional<String> token){
         // 1. 받은 user의 id를 이용해
         // 2. decode해 user에 해당하는 idx를 받음
@@ -29,7 +30,8 @@ public class HomeworkController {
         return new ResponseEntity<>(homeworkService.getUserHomework(userIdx, true), HttpStatus.OK);
 //        return new ResponseEntity<>(calendarService.getCalendarTab(decodedToken.getUser_idx()), HttpStatus.OK);
     }
-    
+
+    @GetMapping("")
     public ResponseEntity getToBeSummitedHomeworkList(@RequestHeader(value = "Authorization") final Optional<String> token){
         // 1. 받은 user의 id를 이용해
         // 2. decode해 user에 해당하는 idx를 받음
