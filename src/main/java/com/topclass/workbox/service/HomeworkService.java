@@ -20,6 +20,7 @@ public class HomeworkService {
         // 1. user가 수강중인 모든 과목의 id를 받아옴
 
         // 2. 각 과목 id를 돌며 간단한 포맷의 hw 데이터를 받아옴
+        // 각 과목의 id >> course에서 getCourseList
         // ex) "1"은 공개소프트웨어의 id 값
         List<Homework>  homeworkList = homeworkMapper.getSimpleFormatHomework("1");
 
