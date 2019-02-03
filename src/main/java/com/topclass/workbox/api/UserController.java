@@ -3,6 +3,7 @@ package com.topclass.workbox.api;
 import com.topclass.workbox.dto.User;
 import com.topclass.workbox.service.UserService;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -39,7 +40,7 @@ public class UserController {
         String uuid = UUID.randomUUID().toString();
         User user = new User(uuid, student_id, password);
 
-
+        return new ResponseEntity<>(userService.createUser(user), HttpStatus.OK);
     }
     // 2. 테마 설정 / PUT
 
