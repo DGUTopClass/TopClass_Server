@@ -9,6 +9,6 @@ import java.util.List;
 @Mapper
 public interface CourseMapper {
 
-    @Select("SELECT * FROM Course WHERE user_id = #{user_id}")
+    @Select("SELECT id FROM Course WHERE user_id = #{user_id}")
     List<String> getCourseId(@Param("user_id") final String user_id);
 }
