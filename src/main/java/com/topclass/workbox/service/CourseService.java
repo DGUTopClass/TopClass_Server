@@ -13,7 +13,7 @@ public class CourseService {
     private CourseMapper courseMapper;
     private SubjectMapper subjectMapper;
 
-    public CourseService(CourseMapper courseMapper, SubjectMapper subjectMapper){
+    public CourseService(final CourseMapper courseMapper, final SubjectMapper subjectMapper){
         this.courseMapper = courseMapper;
         this.subjectMapper = subjectMapper;
     }
