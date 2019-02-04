@@ -10,5 +10,5 @@ import java.util.List;
 public interface CourseMapper {
 
     @Select("SELECT id FROM Course WHERE user_id = #{user_id}")
-    List<String> getCourseId(@Param("user_id") final String user_id);
+    List<String> selectCourseId(@Param("user_id") final String user_id);
 }
