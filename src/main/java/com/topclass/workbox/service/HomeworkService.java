@@ -21,7 +21,7 @@ public class HomeworkService {
     }
 
     // 유저별 과제리스트 get //
-    public DefaultRes getUserHomework(Integer userIdx, Boolean isHanded){
+    public DefaultRes getUserHomework(String userId, Boolean isHanded){
         // 왜 int로 userIdx를 받아올깡 ? ~ ?
 
         // 1. user가 수강중인 모든 과목의 id를 받아옴

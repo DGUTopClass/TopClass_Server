@@ -1,5 +1,6 @@
 package com.topclass.workbox.service;
 
+import com.topclass.workbox.dto.Course;
 import com.topclass.workbox.mapper.CourseMapper;
 import com.topclass.workbox.mapper.SubjectMapper;
 import com.topclass.workbox.model.DefaultRes;

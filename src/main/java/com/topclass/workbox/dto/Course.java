@@ -1,4 +1,4 @@
-package com.topclass.workbox.service;
+package com.topclass.workbox.dto;
 
 public class Course {
     private String id;
