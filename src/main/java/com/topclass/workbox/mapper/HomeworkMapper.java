@@ -15,4 +15,7 @@ public interface HomeworkMapper {
 
     @Select("SELECT id, title, subject_id, finish_date FROM HomeworkPersonal WHERE subject_id = #{subject_id} AND user_id = #{user_id}")
     List<Homework> selectHomeworkPersonal(@Param("subject_id") final String subject_id, @Param("user_id") final String user_id);
+
+    @Select("SELECT feedback, score FROM HomeworkResult WHERE homework_id = #{homework_id} AND user_id = #{user_id}")
+    List
 }
