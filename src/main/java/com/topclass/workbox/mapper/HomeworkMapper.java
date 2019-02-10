@@ -1,6 +1,7 @@
 package com.topclass.workbox.mapper;
 
 import com.topclass.workbox.dto.Homework;
+import com.topclass.workbox.dto.HomeworkResult;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
@@ -17,5 +18,5 @@ public interface HomeworkMapper {
     List<Homework> selectHomeworkPersonal(@Param("subject_id") final String subject_id, @Param("user_id") final String user_id);
 
     @Select("SELECT feedback, score FROM HomeworkResult WHERE homework_id = #{homework_id} AND user_id = #{user_id}")
-    List
+    List<HomeworkResult> selectHomeworkResult(@Param("homework_id") final String homework_id, @Param("user_id") final String user_id);
 }
