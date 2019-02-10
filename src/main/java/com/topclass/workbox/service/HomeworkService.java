@@ -61,7 +61,8 @@ public class HomeworkService {
 
         List<HomeworkSummited> homeworkSummitedList = new ArrayList<HomeworkSummited>();
         for(Homework homework : homeworkList){
-//            homeworkSummitedList.add(hom)
+
+            homeworkSummitedList.add(homeworkMapper.)
             // homework idㅇㅘ user id를 이용해 homeworkresult를 받아옴
         }
 
