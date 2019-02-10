@@ -15,6 +15,7 @@ public class Homework {
 
     public String getSubjectId(){ return subject_id; }
     public String getFinishDate() {return finish_date; }
+    public String getId() {return id;}
     public void setSubjectId(String subjectTitle){
         this.subject_id = subjectTitle;
     }

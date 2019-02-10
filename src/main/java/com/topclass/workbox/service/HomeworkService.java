@@ -1,6 +1,7 @@
 package com.topclass.workbox.service;
 
 import com.topclass.workbox.dto.Homework;
+import com.topclass.workbox.dto.HomeworkSummited;
 import com.topclass.workbox.mapper.CourseMapper;
 import com.topclass.workbox.mapper.HomeworkMapper;
 import com.topclass.workbox.mapper.SubjectMapper;
@@ -37,7 +38,6 @@ public class HomeworkService {
 
         // subject_id를 subject_title로 변환
         for(Homework homework : homeworkList){
-            // 오늘날짜와 비교해서 지난건지, 아닌지 확인
             if(isPast(homework.getFinishDate())) homeworkList.remove(homework);
             else homework.setSubjectId(subjectMapper.getTitleOfSubject(homework.getSubjectId()));
         }
@@ -56,10 +56,16 @@ public class HomeworkService {
             homeworkList.addAll(homeworkMapper.selectHomeworkPersonal(courseId, userId));
         }
 
-        //  HW result도 받아옴 >> 데이터를 추가적으로 List에 반영해줌
-        //  따라서, 지금은 howework로 해뒀는데 새로운 데이터 타입(hw을 상속 받은)이 필요
+        List<HomeworkSummited> homeworkSummitedList = new ArrayList<HomeworkSummited>();
+        for(Homework homework : homeworkList){
+            if(isPast(homework.getFinishDate())){
+                HomeworkSummited newHomework = new HomeworkSummited(homeworkMapper.selectHomeworkResult(homework.getId(), userId));
+                newHomework.setHomework(homework);
+                homeworkSummitedList.add(newHomework);
+            }
+        }
 
-        return DefaultRes.res(StatusCode.OK, ResponseMessage.READ_HOMEWORK, homeworkList);
+        return DefaultRes.res(StatusCode.OK, ResponseMessage.READ_HOMEWORK, homeworkSummitedList);
     }
 
     boolean isPast(String finishDate){

@@ -2,12 +2,18 @@ package com.topclass.workbox.dto;
 
 public class HomeworkSummited {
     private Homework homework;
-    private String feedback;
-    private String score;
+    private HomeworkResult homeworkResult;
 
-    public HomeworkSummited(Homework homework, String feedback, String score){
+    public HomeworkSummited(HomeworkResult homeworkResult){
+        this.homeworkResult = homeworkResult;
+    }
+
+    public HomeworkSummited(Homework homework, HomeworkResult homeworkResult){
         this.homework = homework;
-        this.feedback = feedback;
-        this.score = score;
+        this.homeworkResult = homeworkResult;
+    }
+
+    public void setHomework(Homework homework){
+        this.homework = homework;
     }
 }
