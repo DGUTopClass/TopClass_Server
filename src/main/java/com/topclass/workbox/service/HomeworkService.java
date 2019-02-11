@@ -11,6 +11,7 @@ import com.topclass.workbox.utils.StatusCode;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
 
@@ -76,5 +77,12 @@ public class HomeworkService {
 
         if(current.compareTo(finishDate) > 0) return true;
         else return false;
+    }
+
+    static class CompareDateAsc implements Comparator<Homework> {
+        @Override
+        public int compare(Homework o1, Homework o2) {
+            return o1.getFinishDate().compareTo(o2.getFinishDate());
+        }
     }
 }
