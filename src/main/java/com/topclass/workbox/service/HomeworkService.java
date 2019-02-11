@@ -10,9 +10,7 @@ import com.topclass.workbox.utils.ResponseMessage;
 import com.topclass.workbox.utils.StatusCode;
 
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 public class HomeworkService {
     private HomeworkMapper homeworkMapper;
@@ -42,7 +40,8 @@ public class HomeworkService {
             else homework.setSubjectId(subjectMapper.getTitleOfSubject(homework.getSubjectId()));
         }
 
-        // 정렬기준에 따라 정렬도 해야함!!
+        Collections.sort(homeworkList, new CompareDateAsc());
+
         return DefaultRes.res(StatusCode.OK, ResponseMessage.READ_HOMEWORK, homeworkList);
     }
 
@@ -55,6 +54,8 @@ public class HomeworkService {
             homeworkList.addAll(homeworkMapper.selectHomework(courseId));
             homeworkList.addAll(homeworkMapper.selectHomeworkPersonal(courseId, userId));
         }
+
+        Collections.sort(homeworkList, new CompareDateAsc());
 
         List<HomeworkSummited> homeworkSummitedList = new ArrayList<HomeworkSummited>();
         for(Homework homework : homeworkList){
@@ -76,5 +77,12 @@ public class HomeworkService {
 
         if(current.compareTo(finishDate) > 0) return true;
         else return false;
+    }
+
+    static class CompareDateAsc implements Comparator<Homework> {
+        @Override
+        public int compare(Homework o1, Homework o2) {
+            return o1.getFinishDate().compareTo(o2.getFinishDate());
+        }
     }
 }
