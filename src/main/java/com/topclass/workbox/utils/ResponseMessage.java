@@ -10,6 +10,8 @@ public class ResponseMessage {
   
     //Notice
     public static final String READ_NOTICE = "공지사항 조회 성공";
+    public static final String NOT_FOUND_NOTICE = "공지사항 조회 실패";
+    public static final String READ_UNCHECKED_NOTICE_COUNT = "미조회 공지사항 개수 조회 성공";
   
     //Homework
     public static final String READ_HOMEWORK = "과제 정보 조회 성공";
